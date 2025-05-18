@@ -1,246 +1,93 @@
-/* Base Styles */
-:root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
-    --accent-color: #e74c3c;
-    --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
-    --text-color: #333;
-    --text-light: #7f8c8d;
-}
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: #f9f9f9;
-}
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('scrolled', window.scrollY > 0);
+});
 
-/* Header Styles */
-header {
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    color: white;
-    padding: 60px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+        });
+    });
+});
 
-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.03)" points="0,100 100,0 100,100"/></svg>');
-    background-size: cover;
-    opacity: 0.5;
-}
-
-header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    position: relative;
-    animation: fadeInDown 1s ease;
-}
-
-header h2 {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-bottom: 20px;
-    position: relative;
-    animation: fadeInDown 1.2s ease;
-}
-
-.contact-info {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    position: relative;
-    animation: fadeIn 1.4s ease;
-}
-
-.contact-info p {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 1.1rem;
-}
-
-/* Section Styles */
-section {
-    padding: 60px 0;
-}
-
-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.2rem;
-    color: var(--secondary-color);
-    position: relative;
-}
-
-section h2::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: var(--primary-color);
-    margin: 15px auto;
-    border-radius: 2px;
-}
-
-.about {
-    background-color: white;
-    text-align: center;
-}
-
-.about p {
-    max-width: 800px;
-    margin: 0 auto 30px;
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-/* Article Grid */
-.article-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.article-card {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.article-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.article-card h3 {
-    padding: 20px;
-    font-size: 1.3rem;
-    color: var(--secondary-color);
-    border-bottom: 1px solid #eee;
-}
-
-.article-card p {
-    padding: 0 20px 20px;
-    flex-grow: 1;
-    color: var(--text-light);
-}
-
-.article-card .btn {
-    margin: 0 20px 20px;
-    display: block;
-    text-align: center;
-}
-
-/* Button Styles */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer Styles */
-footer {
-    background: var(--secondary-color);
-    color: white;
-    padding: 30px 0;
-    text-align: center;
-}
-
-footer p {
-    margin-bottom: 20px;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.social-links a {
-    color: white;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--primary-color);
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.2rem;
-    }
+const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.about-content, .article-card, .contact-content');
     
-    header h2 {
-        font-size: 1.2rem;
-    }
+    elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        
+        if (elementPosition < screenPosition) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }
+    });
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.about-content, .article-card, .contact-content');
     
-    .contact-info {
-        flex-direction: column;
-        gap: 10px;
-    }
+    elements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
     
-    .article-grid {
-        grid-template-columns: 1fr;
-    }
+    document.querySelector('.hero-content').style.opacity = '1';
+    document.querySelector('.hero-content').style.transform = 'translateY(0)';
+});
+
+window.addEventListener('scroll', animateOnScroll);
+
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Here you would typically send the form data to a server
+        // For this example, we'll just show an alert
+        alert(`Thank you, ${name}! Your message has been received. I'll get back to you soon.`);
+        
+        contactForm.reset();
+    });
 }
+
+const newsletterForm = document.getElementById('newsletterForm');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const email = newsletterForm.querySelector('input').value;
+        alert(`Thank you for subscribing with ${email}! You'll receive updates on my latest articles.`);
+        newsletterForm.reset();
+    });
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
