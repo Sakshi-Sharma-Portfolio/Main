@@ -3,98 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakshi Sharma - Content Writer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Sakshi Sharma | Technical Content Writer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <h1>Sakshi Sharma</h1>
-            <h2>Technical Content Writer</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> sakshisharma010702@gmail.com</p>
-                <p><i class="fas fa-phone"></i> +91-9560613991</p>
-                <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+            <a href="#" class="logo">Sakshi Sharma</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#articles">Articles</a>
+                <a href="#contact">Contact</a>
+                <a href="Sakshi_Sharma_Resume.pdf" class="btn-nav" download>Download CV</a>
             </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <section class="about">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h2>About Me</h2>
-            <p>I am a Content Writer with 3+ years of experience creating clear, compelling technical content that boosts user engagement and enhances brand authority. Skilled in SEO optimization, content strategy, and in-depth research, I deliver accurate, audience-focused materials across multiple platforms.</p>
-            
-            <a href="Sakshi_Sharma_Resume.pdf" class="btn" download>Download My Resume</a>
+            <div class="hero-content">
+                <h1>Technical Content Writer & SEO Specialist</h1>
+                <p class="subtitle">Crafting compelling technical content that drives engagement and boosts brand authority</p>
+                <div class="hero-btns">
+                    <a href="#articles" class="btn-primary">View My Work</a>
+                    <a href="#contact" class="btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <div class="pattern"></div>
+                    <div class="glow"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="articles">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
-            <h2>My Published Articles</h2>
-            <div class="article-grid">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a Content Writer with 3+ years of experience creating clear, compelling technical content that boosts user engagement and enhances brand authority.</p>
+                    <p>Skilled in SEO optimization, content strategy, and in-depth research, I deliver accurate, audience-focused materials across multiple platforms. I manage complex projects under tight deadlines while maintaining top-notch quality.</p>
+                    <p>I bring creativity, precision, and strategic insight to every assignment by simplifying complex ideas.</p>
+                    <div class="skills">
+                        <div class="skill-tag">Technical Writing</div>
+                        <div class="skill-tag">SEO Optimization</div>
+                        <div class="skill-tag">Content Strategy</div>
+                        <div class="skill-tag">Research</div>
+                        <div class="skill-tag">Cybersecurity</div>
+                        <div class="skill-tag">Cloud Security</div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-text">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-text">Articles Published</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">7x</div>
+                        <div class="stat-text">Best Employee Award</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="articles">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Articles</h2>
+                <p class="section-subtitle">My published technical content</p>
+            </div>
+            <div class="articles-grid">
+                <!-- Article 1 -->
                 <div class="article-card">
-                    <h3>Creating a CSR and Key Attestation Using YubiKey Token</h3>
-                    <p>A step-by-step guide for generating CSR and key attestation with YubiKey token to ensure compliance with regulations for Code Signing Certificates.</p>
-                    <a href="creating-csr-and-key-attestation-using-yubikey-token.pdf" class="btn">Read Article</a>
+                    <div class="article-category">Cybersecurity</div>
+                    <h3>What is a Cloud Hardware Security Module?</h3>
+                    <p>Comprehensive guide to understanding Cloud HSMs, their benefits, and how to choose the right one for your security needs.</p>
+                    <a href="what-is-a-cloud-hardware-security-module.pdf" class="article-link">Read Article <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
+                <!-- Article 2 -->
                 <div class="article-card">
-                    <h3>How to Fix NET::ERR_CERT_COMMON_NAME_INVALID Error</h3>
-                    <p>Comprehensive troubleshooting guide for resolving the common SSL certificate validation error that prevents secure connections.</p>
-                    <a href="how-to-fix-neterr_cert_common_name_invalid-error.pdf" class="btn">Read Article</a>
-                </div>
-                
-                <div class="article-card">
+                    <div class="article-category">Troubleshooting</div>
                     <h3>How to Fix SSL/TLS Handshake Failed Error</h3>
                     <p>Detailed explanation and solutions for the SSL Handshake Failed Error Code 525 that occurs during secure connection establishment.</p>
-                    <a href="how-to-fix-ssl-tls-handshake-failed-error.pdf" class="btn">Read Article</a>
+                    <a href="how-to-fix-ssl-tls-handshake-failed-error.pdf" class="article-link">Read Article <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
+                <!-- Article 3 -->
                 <div class="article-card">
-                    <h3>What is a Cloud Hardware Security Module?</h3>
-                    <p>Guide to understanding Cloud HSMs, their benefits, and how to choose the right one for your security needs.</p>
-                    <a href="what-is-a-cloud-hardware-security-module.pdf" class="btn">Read Article</a>
-                </div>
-                
-                <div class="article-card">
-                    <h3>SSL Certificates Installation Tutorials</h3>
-                    <p>Comprehensive guides for installing SSL certificates on various servers and platforms.</p>
-                    <a href="ssl-certificates-installation-tutorials.pdf" class="btn">Read Article</a>
-                </div>
-                
-                <div class="article-card">
+                    <div class="article-category">Security</div>
                     <h3>HTTPS vs. SFTP: Technical Differences</h3>
                     <p>Detailed comparison between HTTPS and SFTP protocols in terms of security, ease of use, and file transfer speed.</p>
-                    <a href="https-vs-sftp.pdf" class="btn">Read Article</a>
+                    <a href="https-vs-sftp.pdf" class="article-link">Read Article <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
+                <!-- Article 4 -->
                 <div class="article-card">
-                    <h3>What is Windows Code Signing Certificate?</h3>
-                    <p>Complete guide to Microsoft Windows Code Signing Certificates, their types, and how to obtain them.</p>
-                    <a href="what-is-windows-code-signing-certificate.pdf" class="btn">Read Article</a>
+                    <div class="article-category">Code Signing</div>
+                    <h3>Creating a CSR and Key Attestation Using YubiKey Token</h3>
+                    <p>Step-by-step guide for generating CSR and key attestation with YubiKey token for Code Signing Certificates.</p>
+                    <a href="creating-csr-and-key-attestation-using-yubikey-token.pdf" class="article-link">Read Article <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
+                <!-- Article 5 -->
                 <div class="article-card">
+                    <div class="article-category">Troubleshooting</div>
+                    <h3>How to Fix NET::ERR_CERT_COMMON_NAME_INVALID Error</h3>
+                    <p>Comprehensive troubleshooting guide for resolving the common SSL certificate validation error.</p>
+                    <a href="how-to-fix-neterr_cert_common_name_invalid-error.pdf" class="article-link">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Article 6 -->
+                <div class="article-card">
+                    <div class="article-category">Security</div>
                     <h3>What is Google Cloud HSM?</h3>
                     <p>Explanation of Google Cloud HSM service and how to protect data in Google Cloud environment.</p>
-                    <a href="what-is-google-cloud-hsm.pdf" class="btn">Read Article</a>
+                    <a href="what-is-google-cloud-hsm.pdf" class="article-link">Read Article <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
         <div class="container">
-            <p>&copy; 2023 Sakshi Sharma. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p class="section-subtitle">Let's work together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Email</h4>
+                            <p>sakshisharma010702@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Phone</h4>
+                            <p>+91-9560613991</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Location</h4>
+                            <p>New Delhi, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Sakshi Sharma</h3>
+                    <p>Technical Content Writer specializing in cybersecurity, cloud technologies, and IT infrastructure.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#articles">Articles</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="Sakshi_Sharma_Resume.pdf" download>Download CV</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get updates on my latest articles.</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Sakshi Sharma. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
